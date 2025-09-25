@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom, #5c94fc, #ffffff);
+  font-family: 'Press Start 2P', cursive, sans-serif;
+}
+
+.game-board {
+  width: 100%;
+  max-width: 900px;
+  height: 500px;
+  border-bottom: 15px solid rgb(35, 160, 35);
+  margin: 50px auto;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(#87ceeb, #e0f6ff);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.pipe {
+  position: absolute;
+  bottom: 0;
+  width: 80px;
+  animation: pipe-animation 1.5s infinite linear;
+}
+
+.mario {
+  width: 150px;
+  position: absolute;
+  bottom: 0;
+  transition: transform 0.1s;
+}
+
+.jump {
+  animation: jump 500ms ease-out;
+}
+
+.clouds {
+  position: absolute;
+  top: 20px;
+  left: 100%;
+  width: 550px;
+  animation: clouds-animation 20s infinite linear;
+  opacity: 0.8;
+}
+
+.score {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 18px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+}
+
+@keyframes pipe-animation {
+  from {
+    left: 100%;
+  }
+  to {
+    left: -80px;
+  }
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+  40%, 50%, 60% {
+    bottom: 180px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes clouds-animation {
+  from {
+    left: 100%;
+  }
+  to {
+    left: -550px;
+  }
+}
